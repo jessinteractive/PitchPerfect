@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WJ-SP-hYX">
-                                <rect key="frame" x="264" y="358" width="73" height="21"/>
+                                <rect key="frame" x="264" y="358" width="72.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,19 +41,28 @@
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V35-at-Tzx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="press microphone to record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLy-RG-iNe">
+                                <rect key="frame" x="194" y="110" width="212" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25779326256747404" green="0.78618514976554976" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="HDh-VI-h8j" secondAttribute="centerY" id="9Fq-Dw-CEp"/>
+                            <constraint firstAttribute="centerX" secondItem="lLy-RG-iNe" secondAttribute="centerX" id="BGG-KC-ofn"/>
                             <constraint firstAttribute="centerX" secondItem="HDh-VI-h8j" secondAttribute="centerX" id="C69-nG-Yzt"/>
                             <constraint firstAttribute="centerX" secondItem="FdJ-sz-caP" secondAttribute="centerX" id="GvJ-5e-ezr"/>
                             <constraint firstAttribute="centerX" secondItem="9WJ-SP-hYX" secondAttribute="centerX" id="S4V-me-1d4"/>
                             <constraint firstItem="9WJ-SP-hYX" firstAttribute="top" secondItem="HDh-VI-h8j" secondAttribute="bottom" constant="8" id="b77-z2-FX7"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="FdJ-sz-caP" secondAttribute="bottom" constant="80" id="oHI-Hc-cRX"/>
+                            <constraint firstItem="lLy-RG-iNe" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="46" id="p0u-mq-77i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="sLf-X8-kfs"/>
                     <connections>
+                        <outlet property="infoLabel" destination="lLy-RG-iNe" id="4N6-an-8yS"/>
                         <outlet property="recordButton" destination="HDh-VI-h8j" id="VGv-fX-CDa"/>
                         <outlet property="recordingInProgress" destination="9WJ-SP-hYX" id="YOD-H0-Msv"/>
                         <outlet property="stopButton" destination="FdJ-sz-caP" id="uYh-Al-evu"/>

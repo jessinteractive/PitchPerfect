@@ -15,6 +15,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var audioRecorder: AVAudioRecorder!
     
@@ -22,6 +23,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         
@@ -41,6 +43,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func recordAudio(sender: UIButton) {
         stopButton.hidden = false
         recordButton.enabled = false
+        infoLabel.text = "press stop button when finished"
         //TODO: Show text "recording in progress"
         recordingInProgress.hidden = false
         
@@ -95,6 +98,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecording(sender: UIButton) {
         stopButton.hidden = true
+        infoLabel.text = "press microphone button to record"
         //TODO: Hide text "recording in progress"
         recordingInProgress.hidden = true
         //TODO: Stop recording user's audio
