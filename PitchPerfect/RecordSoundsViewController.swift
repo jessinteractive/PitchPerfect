@@ -75,9 +75,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if (flag){
             //TODO: Step 1 - Save the reocorded audio
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
             
             //TODO: Step 2 - Move the next scene aka perform segue
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
@@ -98,7 +96,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecording(sender: UIButton) {
         stopButton.hidden = true
-        infoLabel.text = "press microphone button to record"
+        infoLabel.text = "Tap the micro to record!"
         //TODO: Hide text "recording in progress"
         recordingInProgress.hidden = true
         //TODO: Stop recording user's audio
